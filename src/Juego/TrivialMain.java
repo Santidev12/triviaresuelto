@@ -136,11 +136,11 @@ public class TrivialMain {
 
         if (usuarioEncontrado != null) {
 
-                if (usuarioEncontrado instanceof Admin) {
+                if (usuarioEncontrado.permisosAdmin()) {
                     System.out.println("Inicio de sesión exitoso como administrador.");
                     TrivialAdmin admin = new TrivialAdmin();
                     admin.administrar();
-                } else if (usuarioEncontrado instanceof Player) {
+                } else if (!usuarioEncontrado.permisosAdmin()) {
                     System.out.println("Inicio de sesión exitoso como jugador.");
 
                     Player player = (Player) usuarioEncontrado;
