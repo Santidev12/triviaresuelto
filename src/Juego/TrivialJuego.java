@@ -41,7 +41,6 @@ public class TrivialJuego {
             }
         }
 
-
         // Mostrar puntuación final
         System.out.println("Tu puntuación final es: " + partida.getPuntuacion());
 

@@ -4,7 +4,6 @@ import Preguntas.Opcion;
 import Preguntas.Pregunta;
 import user.Partida;
 import user.User;
-
 import java.io.*;
 import java.util.ArrayList;
 public class GestionaFicheros {
@@ -45,7 +44,7 @@ public class GestionaFicheros {
 
                 // Lee las opciones para esta pregunta
                 ArrayList<Opcion> opciones = new ArrayList<>();
-                int indiceCorrecto = -1; // Inicializamos el índice de la opción correcta
+                 // Inicializamos el índice de la opción correcta
                 while ((linea = in.readLine()) != null && !linea.isEmpty())                     { // Lee líneas hasta encontrar una línea en blanco
                     boolean esCorrecta = linea.endsWith("*");
                     String enunciadoOpcion = linea.replace("*", "").trim();
@@ -53,9 +52,7 @@ public class GestionaFicheros {
                     opciones.add(opcion);
 
                     // Verifica si esta opción es correcta y almacena su índice si lo es
-                    if (esCorrecta) {
-                        indiceCorrecto = opciones.size() - 1; // El índice de la opción correcta es el tamaño actual del array menos 1
-                    }
+
                 }
 
                 // Crea la pregunta y la agrega a la lista
@@ -68,8 +65,6 @@ public class GestionaFicheros {
         return preguntas;
     }
 
-
-
     public static void guardarPartida(Partida partida) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePartidas, true))) {
             // Formateamos la información de la partida de manera legible
@@ -79,7 +74,6 @@ public class GestionaFicheros {
             e.printStackTrace();
         }
     }
-
 
 
     // Método para leer todas las partidas desde el fichero de texto

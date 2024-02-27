@@ -17,7 +17,6 @@ public class TrivialMain {
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
-
         do {
             System.out.println("\nMenú:");
             System.out.println("1. Registro player");
@@ -36,7 +35,7 @@ public class TrivialMain {
                     registroAdmin(scanner);
                     break;
                 case 3:
-                    inicioSesion(scanner, partidas, users);
+                    inicioSesion(scanner, users);
                     break;
                 case 4:
                     System.out.println("¡Hasta luego!");
@@ -120,7 +119,7 @@ public class TrivialMain {
     }
 
 
-    private static void inicioSesion(Scanner scanner, ArrayList<Partida> partidas, ArrayList<User> users) {
+    private static void inicioSesion(Scanner scanner, ArrayList<User> users) {
         System.out.println("\nInicio de sesión:");
         System.out.print("Ingrese nombre de usuario: ");
         String nombre = scanner.nextLine();
@@ -136,7 +135,7 @@ public class TrivialMain {
         }
 
         if (usuarioEncontrado != null) {
-            if (usuarioEncontrado != null) {
+
                 if (usuarioEncontrado instanceof Admin) {
                     System.out.println("Inicio de sesión exitoso como administrador.");
                     TrivialAdmin admin = new TrivialAdmin();
@@ -156,8 +155,6 @@ public class TrivialMain {
                     TrivialJuego juego = new TrivialJuego(player, preguntas);
 
                     juego.jugar();
-                }
-
             }
         } else {
             System.out.println("Nombre de usuario o contraseña incorrectos.");
