@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class TrivialMain {
     private static ArrayList<User> users = new ArrayList<>();
-    private static ArrayList<Partida> partidas = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -148,10 +147,10 @@ public class TrivialMain {
                     System.out.println("Se ha iniciado una nueva partida para " + player.nombre +
                             " en la fecha " + partida.getDate());
 
-                    // Carga las preguntas desde el archivo
+                    // Cargo las preguntas desde el archivo
                     ArrayList<Pregunta> preguntas = GestionaFicheros.cargaPreguntas();
 
-                    // Aquí creas una instancia de TrivialJuego con el jugador y las preguntas
+                    // Aquí creo una instancia de TrivialJuego con el jugador y las preguntas
                     TrivialJuego juego = new TrivialJuego(player, preguntas);
 
                     juego.jugar();
